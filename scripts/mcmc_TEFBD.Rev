@@ -15,17 +15,15 @@
 taxa <- readTaxonData("data/taxa.tsv")
 
 # Import the molecular sequences #
-cytb <- readDiscreteCharacterData("data/genetic_data.nxs")
+mol <- readDiscreteCharacterData("data/genetic_data.nxs")
 
 
 # Import the morphological character matrix #
 morpho <- readDiscreteCharacterData("data/phenotypic_asr_data.nxs")
 
 # Add the missing taxa to each data partition #
-cytb.addMissingTaxa(taxa)
+mol.addMissingTaxa(taxa)
 morpho.addMissingTaxa(taxa)
-
-#starting_tree <- readTrees("Data/MAP.tre")[1]
 
 ## helpers
 moves = VectorMoves()
@@ -48,7 +46,7 @@ source("scripts/model_Morph_TEFBD.Rev") # Morphological character change model
 ########
 
 # initialize the model object #
-mymodel = model(rates_cytb[i])
+mymodel = model(rates_mol)
 # Create a vector of monitors #
 # 1. for the full model #
 monitors.append( mnModel(filename="output/clade_const.log", printgen=10))
@@ -61,7 +59,7 @@ monitors.append( mnScreen(printgen=10,  num_samp_anc, origin_time))
 mymcmc = mcmc(mymodel, monitors, moves)
 
 # Run the MCMC #
-mymcmc.run(generations=2000000)
+mymcmc.run(generations=200000)
 
 # Quit RevBayes #
 q()

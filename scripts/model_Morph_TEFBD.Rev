@@ -1,42 +1,72 @@
-###########################################
-# Binary morphological substitution model #
-###########################################
-#Create the Q matrix. These data are binary, so we initialize the Jukes-Cantor matrix with
-# two states
+################################################################################
+#
+# RevBayes Example: Inferring a Phylogeny of Fossil Echinoderms Using the Mk Model
+#
+# This file: Specifies the discretized morphological substitution model  ...
+#
+# authors:  April M. Wright, Michael J. Landis, Sebastian Höhna, David Černý
+#
+################################################################################
+################################################################################
 
+# Set the two parameters to the beta distribution equal to each other, and a move to operate on them.
+beta_scale ~ dnLognormal( 0.0, sd=2*0.587405 )
+moves.append( mvScale(beta_scale, lambda=1, weight=5.0 ) )
 
-#Set up Gamma-distributed rate variation.
-alpha_morpho ~ dnExponential( 1.0 )
-
+# Set up Gamma-distributed rate variation.
+alpha_morpho ~ dnUniform( 0.0, 1E6 )
 rates_morpho := fnDiscretizeGamma( alpha_morpho, alpha_morpho, 4 )
 
-#Moves on the parameters to the Gamma distribution.
-moves.append( mvScale(alpha_morpho, lambda=0.01, weight=5.0))
-moves.append( mvScale(alpha_morpho, lambda=0.1,  weight=3.0))
-moves.append( mvScale(alpha_morpho, lambda=1,    weight=1.0))
+# Moves on the parameters to the Gamma distribution.
+moves.append( mvScale(alpha_morpho, lambda=1, weight=2.0) )
 
+# How many distinct matrices we want in the mixture, not including their symmetric counterparts.
+n_cats = 8
+iter_vect = seq(from = 1, to = 2*n_cats, by = 2)
 
-
-
-n_max_states <- 7
+n_max_states <- 10
 idx = 1
+
 morpho_bystate[1] <- morpho
 for (i in 2:n_max_states) {
     morpho_bystate[i] <- morpho                                # make local tmp copy of data
     morpho_bystate[i].setNumStatesPartition(i)                 # only keep character blocks with state space equal to size i
     nc = morpho_bystate[i].nchar()                             # get number of characters per character size with i-sized states
+    if (nc > 0) {
+      i
+      for (j in iter_vect) {
+          beta_scale.redraw()
 
-    if (nc > 0) {                                              # for non-empty character blocks
-        q[idx] <- fnJC(i)                                      # make i-by-i rate matrix
-        m_morph[idx] ~ dnPhyloCTMC( tree=fbd_tree,
-                                    Q=q[idx],
-                                    nSites=nc,
-                                    siteRates=rates_morpho,
-                                    type="Standard")           # create model of evolution for the character block
+          pi_prior := fnDiscretizeBeta(beta_scale, beta_scale, i)
 
-        m_morph[idx].clamp(morpho_bystate[i])                  # attach the data
+          # reverse the pi_prior vector
+          for (k in 1:pi_prior.size()) {
+              upper = pi_prior.size()
+              ind = upper + 1 - k
+              rev_pi_prior[k] <- pi_prior[ind]
+          }
 
-        idx = idx + 1                                          # increment counter
-        idx
+          # create i-by-i rate matrices from both the original and reversed pi_prior vectors
+          Q[idx][j] := fnF81(simplex(pi_prior))
+          Q[idx][j+1] := fnF81(simplex(rev_pi_prior))
+
+          Q[idx][j]
+          print(" ")
+          Q[idx][j+1]
+          print(" ")
+      }
+
+      mat_prior[idx] <- rep(1, 2*n_cats)
+      matrix_probs[idx] ~ dnDirichlet(mat_prior[idx])
+
+      moves.append( mvBetaSimplex(matrix_probs[idx], weight=3.0) )
+      moves.append( mvDirichletSimplex(matrix_probs[idx], weight=1.5) )
+
+      m_morph[idx] ~ dnPhyloCTMC(tree=phylogeny, siteRates=rates_morpho, Q=Q[idx],
+                                 type="Standard", siteMatrices=matrix_probs[idx])
+      m_morph[idx].clamp(morpho_bystate[i])
+
+      idx = idx + 1                                            # increment counter
+      idx
     }
 }
