@@ -62,7 +62,7 @@ for (i in 2:n_max_states) {
       moves.append( mvBetaSimplex(matrix_probs[idx], weight=3.0) )
       moves.append( mvDirichletSimplex(matrix_probs[idx], weight=1.5) )
 
-      m_morph[idx] ~ dnPhyloCTMC(tree=phylogeny, siteRates=rates_morpho, Q=Q[idx],
+      m_morph[idx] ~ dnPhyloCTMC(tree=fbd_tree, siteRates=rates_morpho, Q=Q[idx],
                                  type="Standard", siteMatrices=matrix_probs[idx])
       m_morph[idx].clamp(morpho_bystate[i])
 

@@ -80,13 +80,13 @@ moves.append(mvSlide(origin_time, delta=1, weight=5.0))
 fbd_dist = dnFBDP(origin=origin_time, lambda=speciation_rate, mu=extinction_rate, psi=psi, rho=rho, taxa=taxa)
 
 # defining clade constriants
-Xenosauridae = clade("Shinisaurus crocodilurus", "Xenosaurus platyceps", "Xenosaurus grandis")
-Crown = clade("Liotyphlops albirostris", "Typhlophis squamosus", "Rena dulcis", "Typhlops jamaicensis", "Sanajeh indicus", "Wonambi naracoortensis", "Yurlunggur", "Anilius scytale", "Kataria anisodonta", "Trachyboa boulengeri", "Tropidophis haetianus", "Cylindrophis ruffus", "Anomochilus leonardi", "Uropeltis melanogaster", "Haasiophis terrasanctus", "Eupodophis descouensis", "Pachyrhachis problematicus", "Xenopeltis unicolor", "Loxocemus bicolor", "Aspidites melanocephalus", "Python molurus", "Calabaria reinhardtii", "Eryx colubrinus", "Boa constrictor", "Epicrates striatus", "Lichanura trivirgata", "Exiliboa placata", "Ungaliophis continentalis", "Casarea dussumieri", "Xenophidion acanthognathus", "Acrochordus granulatus", "Xenodermus javanicus", "Pareas hamptoni", "Causus rhombeatus", "Azemiops feae", "Daboia russelli", "Bothrops asper", "Agkistrodon contortrix", "Lachesis muta", "Coluber constrictor", "Lampropeltis getula", "Natrix natrix", "Thamnophis marcianus", "Afronatrix anoscopus", "Amphiesma stolata", "Xenochrophis piscator", "Lycophidion capense", "Aparallactus werneri", "Atractaspis irregularis", "Naja naja", "Micrurus fulvius", "Laticauda colubrina", "Notechis scutatus")
+Xenosauridae = clade("Shinisaurus_crocodilurus", "Xenosaurus_platyceps", "Xenosaurus_grandis")
+Crown = clade("Liotyphlops_albirostris", "Typhlophis_squamosus", "Rena_dulcis", "Typhlops_jamaicensis", "Sanajeh_indicus", "Wonambi_naracoortensis", "Yurlunggur", "Anilius_scytale", "Kataria_anisodonta", "Trachyboa_boulengeri", "Tropidophis_haetianus", "Cylindrophis_ruffus", "Anomochilus_leonardi", "Uropeltis_melanogaster", "Haasiophis_terrasanctus", "Eupodophis_descouensis", "Pachyrhachis_problematicus", "Xenopeltis_unicolor", "Loxocemus_bicolor", "Aspidites_melanocephalus", "Python_molurus", "Calabaria_reinhardtii", "Eryx_colubrinus", "Boa_constrictor", "Epicrates_striatus", "Lichanura_trivirgata", "Exiliboa_placata", "Ungaliophis_continentalis", "Casarea_dussumieri", "Xenophidion_acanthognathus", "Acrochordus_granulatus", "Xenodermus_javanicus", "Pareas_hamptoni", "Causus_rhombeatus", "Azemiops_feae", "Daboia_russelli", "Bothrops_asper", "Agkistrodon_contortrix", "Lachesis_muta", "Coluber_constrictor", "Lampropeltis_getula", "Natrix_natrix", "Thamnophis_marcianus", "Afronatrix_anoscopus", "Amphiesma_stolata", "Xenochrophis_piscator", "Lycophidion_capense", "Aparallactus_werneri", "Atractaspis_irregularis", "Naja_naja", "Micrurus_fulvius", "Laticauda_colubrina", "Notechis_scutatus")
 
 # The will be a random variable of a constrained topology distribution that is governed by the FBD #
 # this distribution will generate FBD trees that match the monophyly constraints defined above #
-constraints = v(Xenosauridae, Crown )
-fbd_tree ~ dnConstrainedTopology(fbd_dist, constraints, outgroup = "Xenosauridae")
+constraints = v(Xenosauridae, Crown)
+fbd_tree ~ dnConstrainedTopology(fbd_dist, constraints)
 age_Crown := tmrca(fbd_tree, Crown)
 
 #fbd_tree.setValue(starting_tree)

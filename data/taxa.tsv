@@ -1,74 +1,74 @@
 taxon min max
-Shinisaurus crocodilurus 0 0
-Xenosaurus platyceps 0 0
-Xenosaurus grandis 0 0
-Pseudopus apodus 0 0
-Peltosaurus granulosus 33.3 33.9
-Helodermoides tuberculatus 33.9 37.2
-Celestus enneagrammus 0 0
-Elgaria multicarinata 0 0
-Proplatynotia longirostrata 72.1 83.6
-Gobiderma pulchrum 72.1 83.6
-Heloderma horridum 0 0
-Heloderma suspectum 0 0
-Lanthanotus borneensis 0 0
+Shinisaurus_crocodilurus 0 0
+Xenosaurus_platyceps 0 0
+Xenosaurus_grandis 0 0
+Pseudopus_apodus 0 0
+Peltosaurus_granulosus 33.3 33.9
+Helodermoides_tuberculatus 33.9 37.2
+Celestus_enneagrammus 0 0
+Elgaria_multicarinata 0 0
+Proplatynotia_longirostrata 72.1 83.6
+Gobiderma_pulchrum 72.1 83.6
+Heloderma_horridum 0 0
+Heloderma_suspectum 0 0
+Lanthanotus_borneensis 0 0
 Saniwa 33.9 63.3
-Varanus salvator 0 0
-Varanus acanthurus 0 0
-Varanus exanthematicus 0 0
-Coniophis precedens 66 72.1
-Najash rionegrina 93.9 100.5
-Dinilysia patagonica 72.1 86.3
-Rena dulcis 0 0
-Typhlops jamaicensis 0 0
-Liotyphlops albirostris 0 0
-Typhlophis squamosus 0 0
-Sanajeh indicus 66.0 72.1
-Wonambi naracoortensis 0.0117 28.1
+Varanus_salvator 0 0
+Varanus_acanthurus 0 0
+Varanus_exanthematicus 0 0
+Coniophis_precedens 66 72.1
+Najash_rionegrina 93.9 100.5
+Dinilysia_patagonica 72.1 86.3
+Rena_dulcis 0 0
+Typhlops_jamaicensis 0 0
+Liotyphlops_albirostris 0 0
+Typhlophis_squamosus 0 0
+Sanajeh_indicus 66.0 72.1
+Wonambi_naracoortensis 0.0117 28.1
 Yurlunggur 0.0117 28.1
-Anilius scytale 0 0
-Cylindrophis ruffus 0 0
-Anomochilus leonardi 0 0
-Uropeltis melanogaster 0 0
-Haasiophis terrasanctus 93.9 100.5
-Eupodophis descouensis 93.9 100.5
-Pachyrhachis problematicus 93.9 100.5
-Xenopeltis unicolor 0 0
-Loxocemus bicolor 0 0
-Casarea dussumieri 0 0
-Xenophidion acanthognathus 0 0
-Exiliboa placata 0 0
-Ungaliophis continentalis 0 0
-Lichanura trivirgata 0 0
-Calabaria reinhardtii 0 0
-Eryx colubrinus 0 0
-Epicrates striatus 0 0
-Boa constrictor 0 0
-Aspidites melanocephalus 0 0
-Python molurus 0 0
-Trachyboa boulengeri 0 0
-Tropidophis haetianus 0 0
-Kataria anisodonta 61.6 66.0
-Xenodermus javanicus 0 0
-Acrochordus granulatus 0 0
-Pareas hamptoni 0 0
-Lycophidion capense 0 0
-Aparallactus werneri 0 0
-Atractaspis irregularis 0 0
-Azemiops feae 0 0
-Causus rhombeatus 0 0
-Daboia russelli 0 0
-Bothrops asper 0 0
-Agkistrodon contortrix 0 0
-Lachesis muta 0 0
-Micrurus fulvius 0 0
-Naja naja 0 0
-Laticauda colubrina 0 0
-Notechis scutatus 0 0
-Natrix natrix 0 0
-Thamnophis marcianus 0 0
-Amphiesma stolata 0 0
-Afronatrix anoscopus 0 0
-Xenochrophis piscator 0 0
-Lampropeltis getula 0 0
-Coluber constrictor 0 0	
+Anilius_scytale 0 0
+Cylindrophis_ruffus 0 0
+Anomochilus_leonardi 0 0
+Uropeltis_melanogaster 0 0
+Haasiophis_terrasanctus 93.9 100.5
+Eupodophis_descouensis 93.9 100.5
+Pachyrhachis_problematicus 93.9 100.5
+Xenopeltis_unicolor 0 0
+Loxocemus_bicolor 0 0
+Casarea_dussumieri 0 0
+Xenophidion_acanthognathus 0 0
+Exiliboa_placata 0 0
+Ungaliophis_continentalis 0 0
+Lichanura_trivirgata 0 0
+Calabaria_reinhardtii 0 0
+Eryx_colubrinus 0 0
+Epicrates_striatus 0 0
+Boa_constrictor 0 0
+Aspidites_melanocephalus 0 0
+Python_molurus 0 0
+Trachyboa_boulengeri 0 0
+Tropidophis_haetianus 0 0
+Kataria_anisodonta 61.6 66.0
+Xenodermus_javanicus 0 0
+Acrochordus_granulatus 0 0
+Pareas_hamptoni 0 0
+Lycophidion_capense 0 0
+Aparallactus_werneri 0 0
+Atractaspis_irregularis 0 0
+Azemiops_feae 0 0
+Causus_rhombeatus 0 0
+Daboia_russelli 0 0
+Bothrops_asper 0 0
+Agkistrodon_contortrix 0 0
+Lachesis_muta 0 0
+Micrurus_fulvius 0 0
+Naja_naja 0 0
+Laticauda_colubrina 0 0
+Notechis_scutatus 0 0
+Natrix_natrix 0 0
+Thamnophis_marcianus 0 0
+Amphiesma_stolata 0 0
+Afronatrix_anoscopus 0 0
+Xenochrophis_piscator 0 0
+Lampropeltis_getula 0 0
+Coluber_constrictor 0 0
