@@ -1,0 +1,6 @@
+getwd()
+setwd("G:\\\\Other computers\\\\MacBook_Pro\\\\Desktop\\\\Ancestral_State_Snakes\\\\output")
+getwd()
+trace = readTreeTrace("clade_const.trees")
+mccTree(trace, "cladeconst_test.mcc.tre")
+q()
