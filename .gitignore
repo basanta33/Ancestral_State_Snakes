@@ -1,5 +1,8 @@
 
 *.pdf
 *.xlsx
+*.log
+*.trees
+*.mcc.tre
 *.docx
 output/
