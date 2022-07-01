@@ -5,4 +5,5 @@
 *.trees
 *.mcc.tre
 *.docx
-output/
+output/*
+
